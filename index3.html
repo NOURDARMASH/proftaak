@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .dropdown {
+        float: left;
+        overflow: hidden;
+    }
+    
+    .dropdown .dropbtn {
+        font-size: 20px;
+        padding: 20px 25px;
+    }
+    
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+        background-color: rgb(85, 98, 105);
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #6f8892;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(69, 60, 197, 0.2);
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 20px 25px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .container>div {
+        padding: 20px 25px;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+
+
+    <div class="container">
+        <div class="dropdown">
+            <button class="dropbtn">Nieuwe VM</button>
+            <select id="test-dropdown" class="dropdown-content">
+        <option value="1">New VM</option>
+        <option value="2">Linux</option>
+        <option value="3">Windows 10</option>
+        <option value="4">IOS</option>
+     </select></div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Mijn VM</button>
+    </div>
+    </div>
+    <span id="choice"></span>
+    <script>
+        var a = document.getElementById('test-dropdown');
+        a.addEventListener('change', function() {
+            var b = document.querySelectorAll('option:checked');
+            for (var i = 0; i < b.length; i++) {
+                if (b[i].value == 1) {
+                    alert('Geometry course required')
+                } else if (b[i].value == 2) {
+                    alert('Biology course required')
+                } else {
+                    alert('English 1 and 2 courses required for English')
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
